@@ -91,13 +91,12 @@
                 columns: [
                     { field: "name", title: "Name" },
                     { field: "designation", title: "Designation" },
-                    { field: "direct_number", title: "Direct Extension" },
+                    { field: "direct_number", title: "DID" },
                     { field: "primary_contact", title: "Prim. Contact" },
                     { field: "secondary_contact", title: "Sec. Contact" },
                     { field: "extension.extension_num", title: "Ext" , width:100 },
-                    { field: "location.department", title: "Department" },
-                    { field: "location.floor", title: "Floor" },
-                    { field: "location.building", title: "Building" },
+                    { field: "location.department", title: "Department / Section", template: "#=location.department# - #=location.section#" },
+                    { field: "location.floor", title: "Location" , template: "#=location.building# - #=location.floor#" },
                 ]
             });
         }
