@@ -17,13 +17,21 @@
         body {
             font-family: 'Nunito', sans-serif;
         }
+        tr > th
+        {
+            text-align: center !important;
+            font-weight: 800 !important;
+        }
         .k-grid .k-grid-search {
             margin-left: auto;
             margin-right: 0;
         }
     </style>
-    <link rel="stylesheet" href="{!! url('/resources/css/kendo.material-v2.min.css') !!}">
+    <link rel="stylesheet" href="{!! url('/resources/css/kendo.common.min.css') !!}">
+    <link rel="stylesheet" href="{!! url('/resources/css/kendo.default.min.css') !!}">
+    {{--<link rel="stylesheet" href="{!! url('/resources/css/kendo.default.mobile.min.css') !!}">--}}
 </head>
+
 <body class="antialiased">
 
 <div class="relative flex items-top justify-center min-h-screen bg-gray-100 dark:bg-gray-900 sm:items-center py-4 sm:pt-0">
@@ -89,14 +97,14 @@
                 sortable: false,
                 pageable: true,
                 columns: [
+                    { field: "extension.extension_num", title: "Ext" , width:80 , template: "<span style='text-align: center !important;'><b>#=extension.extension_num#<b></span>" },
                     { field: "name", title: "Name" },
                     { field: "designation", title: "Designation" },
-                    { field: "direct_number", title: "DID" },
-                    { field: "primary_contact", title: "Prim. Contact" },
-                    { field: "secondary_contact", title: "Sec. Contact" },
-                    { field: "extension.extension_num", title: "Ext" , width:100 },
                     { field: "location.department", title: "Department / Section", template: "#=location.department# - #=location.section#" },
-                    { field: "location.floor", title: "Location" , template: "#=location.building# - #=location.floor#" },
+                    { field: "direct_number", title: "DID" },
+                    { field: "primary_contact", title: "Primary Contact" },
+                    { field: "secondary_contact", title: "Secondary Contact" },
+                    { field: "location.floor", title: "Location" , template: "#=location.building# - #=location.floor#", width:150 },
                 ]
             });
         }
